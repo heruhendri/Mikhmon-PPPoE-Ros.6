@@ -1,8 +1,3 @@
-Tentu! Saya akan membuatkan README.md yang lengkap dan menarik untuk repo heruhendri/mikhmon-pppoe-v6, terinspirasi dari gaya README profil Anda. Agar hasilnya lebih sesuai, mohon konfirmasi:  
-Apakah Anda ingin menampilkan badge, fitur utama, cara instalasi, screenshot, dan kontak (seperti di profil Anda)?  
-Jika ya, silakan sebutkan fitur utama aplikasi ini atau highlight yang ingin Anda tonjolkan.
-
-Sambil menunggu detail tambahan, berikut template awal README.md yang bisa Anda gunakan dan modifikasi sesuai kebutuhan:
 
 ---
 
