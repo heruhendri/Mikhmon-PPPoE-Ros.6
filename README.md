@@ -22,7 +22,7 @@
 
 ## 📸 Screenshot
 
-> _(Tambahkan screenshot tampilan aplikasi Anda di sini untuk menarik minat user!)_
+> 
 
 ![Screenshot](https://www.hdry.pw/mikhmonss.png)
 
