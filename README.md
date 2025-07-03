@@ -24,7 +24,7 @@
 
 > _(Tambahkan screenshot tampilan aplikasi Anda di sini untuk menarik minat user!)_
 
-![Screenshot]([screenshots/dashboard.png](https://www.hdry.pw/mikhmonss.png))
+![Screenshot](https://www.hdry.pw/mikhmonss.png)
 
 ## ⚙️ Instalasi
 
