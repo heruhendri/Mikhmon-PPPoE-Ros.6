@@ -1,7 +1,7 @@
 
 ---
 
-# Mikhmon PPPoE v6
+# Mikhmon PPPoE ROS.6
 
 [![License](https://img.shields.io/github/license/heruhendri/mikhmon-pppoe-v6.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/heruhendri/mikhmon-pppoe-v6.svg)](https://github.com/heruhendri/mikhmon-pppoe-v6/stargazers)
