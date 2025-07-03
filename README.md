@@ -29,7 +29,7 @@ Sambil menunggu detail tambahan, berikut template awal README.md yang bisa Anda 
 
 > _(Tambahkan screenshot tampilan aplikasi Anda di sini untuk menarik minat user!)_
 
-![Screenshot](screenshots/dashboard.png)
+![Screenshot](https://www.hdry.pw/mikhmonss.png)
 
 ## ⚙️ Instalasi
 
