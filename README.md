@@ -27,7 +27,7 @@
 
 > 
 
-![Screenshot](https://www.hdry.pw/mikhmonss.png)
+![Screenshot](https://github.com/heruhendri/Mikhmon-PPPoE-ROS.6/blob/master/mikhmon/ss.png?raw=true)
 
 ## ⚙️ Instalasi
 
