@@ -6,6 +6,9 @@
 [![License](https://img.shields.io/github/license/heruhendri/mikhmon-pppoe-v6.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/heruhendri/mikhmon-pppoe-v6.svg)](https://github.com/heruhendri/mikhmon-pppoe-v6/stargazers)
 [![Forks](https://img.shields.io/github/forks/heruhendri/mikhmon-pppoe-v6.svg)](https://github.com/heruhendri/mikhmon-pppoe-v6/network/members)
+![PHP](https://img.shields.io/badge/PHP-7.x-blue.svg)
+![License](https://img.shields.io/badge/license-Personal%20Use%20Only-orange)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
 
 ## 🚀 Tentang Project
 
