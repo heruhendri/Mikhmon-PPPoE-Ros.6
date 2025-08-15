@@ -29,7 +29,142 @@
 
 ![Screenshot](https://github.com/heruhendri/Mikhmon-PPPoE-ROS.6/blob/master/mikhmon/ss.png?raw=true)
 
-## ⚙️ Instalasi
+
+## ⚙️ Opsi Instalasi 1
+Oke, saya jelasin step-by-step cara install **Mikhmon** di **NAT VPS** ya, karena NAT VPS itu biasanya nggak punya IP publik langsung, jadi nanti kita perlu sedikit trik untuk mengaksesnya dari luar.
+
+---
+
+## **1. Persiapan VPS**
+
+Pastikan:
+
+* OS: Ubuntu/Debian (disarankan minimal Ubuntu 20.04)
+* Sudah punya akses SSH ke NAT VPS
+* Tahu port mapping NAT VPS yang diberikan provider (misal: port 2200 diakses dari luar diarahkan ke port 22 VPS, dll)
+
+---
+
+## **2. Update Sistem**
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+---
+
+## **3. Install Dependensi**
+
+Mikhmon butuh PHP, Apache, dan unzip.
+
+```bash
+sudo apt install apache2 php unzip -y
+```
+
+---
+
+## **4. Download Mikhmon**
+
+```bash
+cd /var/www/html
+sudo rm -rf index.html
+sudo wget https://github.com/heruhendri/Mikhmon-PPPoE-Ros.6/archive/refs/heads/master.zip -O mikhmon.zip
+sudo unzip mikhmon.zip
+sudo mv Mikhmon-PPPoE-Ros.6 mikhmon
+sudo rm mikhmon.zip
+```
+
+---
+
+## **5. Atur Hak Akses**
+
+```bash
+sudo chown -R www-data:www-data /var/www/html/mikhmon
+sudo chmod -R 755 /var/www/html/mikhmon
+```
+
+---
+
+## **6. Cek Konfigurasi Apache**
+
+```bash
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+```
+
+Pastikan `DocumentRoot` diarahkan ke:
+
+```
+DocumentRoot /var/www/html/mikhmon
+```
+
+---
+
+## **7. Restart Apache**
+
+```bash
+sudo systemctl restart apache2
+sudo systemctl enable apache2
+```
+
+---
+
+## **8. Konfigurasi Port di NAT VPS**
+
+Karena NAT VPS tidak langsung punya port 80 terbuka, biasanya provider memberi mapping port publik (misal port 2080 diakses dari luar diarahkan ke port 80 di VPS).
+Contoh mapping:
+
+* **Publik:** `http://IP_PROVIDER:2080`
+* **Internal VPS:** `http://localhost:80`
+
+Kalau provider tidak menyediakan mapping port HTTP, kamu bisa jalankan Mikhmon di port custom:
+
+```bash
+sudo nano /etc/apache2/ports.conf
+```
+
+Tambahkan:
+
+```
+Listen 8080
+```
+
+Lalu edit VirtualHost:
+
+```bash
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+```
+
+Ubah:
+
+```
+<VirtualHost *:8080>
+    DocumentRoot /var/www/html/mikhmon
+</VirtualHost>
+```
+
+Restart Apache:
+
+```bash
+sudo systemctl restart apache2
+```
+
+---
+
+## **9. Akses Mikhmon**
+
+Buka browser:
+
+```
+http://IP_PROVIDER:PORT_YANG_DIMAP
+```
+
+Lalu ikuti wizard setup Mikhmon.
+
+---
+
+
+
+## ⚙️ Opsi Instalasi 2
 
 **cara install Mikhmon di VPS Ubuntu** (misalnya Ubuntu 20.04 atau 22.04):
 
