@@ -296,6 +296,143 @@ Langsung bisa mulai tambahkan Router Mikrotik kamu dari halaman dashboard.
    ```
    http://localhost/mikhmon-pppoe-v6/
    ```
+## Multi Instalation NatVps
+ **multi-instal Mikhmon di NAT VPS** (misalnya 2–3 instance sekaligus, beda port).
+
+---
+
+### 1. **Siapkan VPS**
+
+Pastikan VPS kamu sudah:
+
+* OS: Ubuntu/Debian (lebih stabil buat Mikhmon)
+* Sudah ada akses root
+* Sudah install web server (nginx/apache) + PHP
+
+Kalau belum, install dulu (contoh pakai nginx + php):
+
+```bash
+apt update && apt upgrade -y
+apt install nginx php php-cli php-fpm unzip wget -y
+```
+
+---
+
+### 2. **Download Mikhmon**
+
+Masuk ke folder web (default di nginx biasanya `/var/www/html/`):
+
+```bash
+cd /var/www/html/
+wget https://github.com/laksa19/mikhmonv3/archive/refs/heads/master.zip -O mikhmon.zip
+unzip mikhmon.zip
+mv mikhmonv3-master mikhmon1
+```
+
+Instance pertama sudah ada di `/var/www/html/mikhmon1`
+
+---
+
+### 3. **Tambah Instance Lain**
+
+Kalau mau multi-instal (misalnya `mikhmon2`, `mikhmon3`):
+
+```bash
+cp -r /var/www/html/mikhmon1 /var/www/html/mikhmon2
+cp -r /var/www/html/mikhmon1 /var/www/html/mikhmon3
+```
+
+Jadi ada:
+
+* `/var/www/html/mikhmon1`
+* `/var/www/html/mikhmon2`
+* `/var/www/html/mikhmon3`
+
+---
+
+### 4. **Atur Virtual Host / Port**
+
+#### Opsi A: Pakai **subfolder**
+
+Kalau langsung akses via domain/IP:
+
+* `http://IP-VPS/mikhmon1`
+* `http://IP-VPS/mikhmon2`
+* `http://IP-VPS/mikhmon3`
+
+#### Opsi B: Pakai **port berbeda**
+
+Bikin config nginx baru:
+
+```bash
+nano /etc/nginx/sites-available/mikhmon1.conf
+```
+
+Isi:
+
+```nginx
+server {
+    listen 8081;
+    root /var/www/html/mikhmon1;
+    index index.php;
+    server_name _;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock; # sesuaikan versi PHP
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+```
+
+Simpan, lalu copy untuk instance lain (`8082` → `/var/www/html/mikhmon2`, dst).
+
+Aktifkan site:
+
+```bash
+ln -s /etc/nginx/sites-available/mikhmon1.conf /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/mikhmon2.conf /etc/nginx/sites-enabled/
+```
+
+Reload nginx:
+
+```bash
+systemctl reload nginx
+```
+
+Sekarang bisa diakses via:
+
+* `http://IP-VPS:8081` → mikhmon1
+* `http://IP-VPS:8082` → mikhmon2
+* `http://IP-VPS:8083` → mikhmon3
+
+---
+
+### 5. **(Opsional) Pakai Subdomain**
+
+Kalau punya domain, bisa arahkan:
+
+* `mikhmon1.domain.com`
+* `mikhmon2.domain.com`
+
+Cukup ubah `server_name` di config nginx.
+
+---
+
+⚡ Jadi intinya ada 3 cara akses multi Mikhmon:
+
+1. **Subfolder** → `IP/mikhmon1`, `IP/mikhmon2` (paling gampang).
+2. **Multi-port** → `IP:8081`, `IP:8082`.
+3. **Subdomain** → `mikhmon1.domain.com`, `mikhmon2.domain.com`.
+
+---
+
+
 
 ## 📝 Penggunaan
 
