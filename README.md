@@ -297,6 +297,172 @@ Langsung bisa mulai tambahkan Router Mikrotik kamu dari halaman dashboard.
    http://localhost/mikhmon-pppoe-v6/
    ```
 ## ⚙️ Opsi Instalasi 3
+**multi-instal Mikhmon HTTPS di NAT VPS**
+Oke Hendri 👍
+Berikut langkah **lengkap & aman** untuk **install Mikhmon Multi (multi user)** di **NAT VPS** (misalnya dari NATVPS) dan menambahkan **HTTPS (SSL)**.
+
+---
+
+## 🧩 Persiapan Awal
+
+Pastikan kamu sudah punya:
+
+* VPS NAT (misalnya NATVPS)
+* Akses SSH (dari panel NATVPS)
+* Subdomain (misalnya `mikhmon.hendri.my.id`)
+* Token Cloudflare (opsional, untuk SSL otomatis)
+
+---
+
+## ⚙️ 1. Update & Install Dependensi
+
+Masuk SSH sebagai root:
+
+```bash
+apt update && apt upgrade -y
+apt install nginx php php-fpm php-cli php-curl php-zip php-xml php-mbstring unzip curl git -y
+```
+
+Pastikan PHP aktif:
+
+```bash
+php -v
+```
+
+---
+
+## 📦 2. Install Mikhmon Multi
+
+Masuk ke folder web:
+
+```bash
+cd /var/www/
+```
+
+Clone repo Mikhmon Multi (versi komunitas):
+
+```bash
+git clone https://github.com/laksa19/mikhmonv3.git mikhmon
+```
+
+Atau jika kamu mau versi **multi user modifikasi**, pakai:
+
+```bash
+git clone https://github.com/fisabiliyusri/MikhmonV3-Multiuser.git mikhmon
+```
+
+---
+
+## 🧰 3. Konfigurasi Nginx
+
+Buat file konfigurasi baru:
+
+```bash
+nano /etc/nginx/sites-available/mikhmon1.conf
+```
+
+Isi dengan konfigurasi ini (ganti domain kamu):
+
+```nginx
+server {
+    listen 80;
+    server_name mikhmon.hendri.site;
+
+    root /var/www/html/mikhmon1;
+    index index.php index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+```
+
+Simpan & keluar (`CTRL + X`, `Y`, `Enter`).
+
+Aktifkan site:
+
+```bash
+ln -s /etc/nginx/sites-available/mikhmon1.conf /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/mikhmon2.conf /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/mikhmon3.conf /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/mikhmon4.conf /etc/nginx/sites-enabled/
+```
+
+Uji konfigurasi:
+
+```bash
+nginx -t
+```
+
+Reload Nginx:
+
+```bash
+systemctl reload nginx
+```
+
+---
+
+## 🔒 4. Tambahkan HTTPS (SSL)
+
+### Opsi 1 – Jika pakai domain Cloudflare:
+
+* Aktifkan mode SSL → **Full (strict)** di Cloudflare.
+* Arahkan subdomain ke IP publik NAT VPS (gunakan port NAT, misalnya `x.x.x.x:12345`).
+* Cloudflare akan otomatis memberikan HTTPS.
+
+### Opsi 2 – Install Let’s Encrypt (langsung di VPS):
+
+Gunakan **Certbot**:
+
+```bash
+apt install certbot python3-certbot-nginx -y
+certbot --nginx -d mikhmon.hendri.site
+```
+
+Ikuti petunjuk dan pilih opsi “Redirect HTTP to HTTPS”.
+
+---
+
+## 🧱 5. Akses Mikhmon
+
+Sekarang buka di browser:
+
+```
+https://mikhmon.hendri.site
+```
+
+Login default (jika ada) biasanya:
+
+```
+User: admin
+Pass: 1234
+```
+
+---
+
+## ⚡ 6. Tips Tambahan
+
+| Tujuan         | Perintah                                      |
+| -------------- | --------------------------------------------- |
+| Restart Nginx  | `systemctl restart nginx`                     |
+| Cek status PHP | `systemctl status php-fpm`                    |
+| Lokasi web     | `/var/www/mikhmon/`                           |
+| Backup         | `zip -r mikhmon-backup.zip /var/www/mikhmon/` |
+
+---
+
+
+
+## ⚙️ Opsi Instalasi 4
  **multi-instal Mikhmon di NAT VPS** (misalnya 2–3 instance sekaligus, beda port).
 
 ---
