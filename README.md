@@ -196,7 +196,7 @@ Pass: 1234
 
 
 
-## ⚙️ Opsi Instalasi 4
+## ⚙️ Opsi Instalasi 3
  **multi-instal Mikhmon di NAT VPS** (misalnya 2–3 instance sekaligus, beda port).
 
 ---
