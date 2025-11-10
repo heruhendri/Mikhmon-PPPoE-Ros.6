@@ -296,7 +296,7 @@ Langsung bisa mulai tambahkan Router Mikrotik kamu dari halaman dashboard.
    ```
    http://localhost/mikhmon-pppoe-v6/
    ```
-## Multi Instalation NatVps
+## ⚙️ Opsi Instalasi 1
  **multi-instal Mikhmon di NAT VPS** (misalnya 2–3 instance sekaligus, beda port).
 
 ---
