@@ -12,7 +12,7 @@
 
 ## 🚀 Tentang Project
 
-**Mikhmon PPPoE v6** adalah aplikasi berbasis PHP yang memudahkan monitoring dan manajemen user PPPoE pada Mikrotik. Dirancang untuk memudahkan pemilik jaringan hotspot dalam mengelola voucher, melihat statistik pengguna, serta mendapatkan laporan secara real-time.
+**Mikhmon PPPoE Ros.6** adalah aplikasi berbasis PHP yang memodifikasi dari mikhmon [laksa19.github.io](https://laksa19.github.io) memudahkan monitoring dan manajemen user PPPoE pada Mikrotik. Dirancang untuk memudahkan pemilik jaringan hotspot dalam mengelola voucher, melihat statistik pengguna, serta mendapatkan laporan secara real-time.
 
 ## ✨ Fitur Unggulan
 
