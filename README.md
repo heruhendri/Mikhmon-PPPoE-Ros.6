@@ -24,7 +24,7 @@
 - Support multi-router
 
 ## 📸 Screenshot
-s
+
 > 
 
 ![Screenshot](https://github.com/heruhendri/Mikhmon-PPPoE-Ros.6/blob/master/ss.gif)
