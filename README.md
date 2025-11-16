@@ -27,7 +27,7 @@
 
 > 
 
-![Screenshot](https://github.com/heruhendri/Mikhmon-PPPoE-ROS.6/blob/master/mikhmon/ss.png?raw=true)
+![Screenshot](https://github.com/heruhendri/Mikhmon-PPPoE-Ros.6/blob/master/ss.gif)
 
 
 ## ⚙️ Opsi Instalasi 2
