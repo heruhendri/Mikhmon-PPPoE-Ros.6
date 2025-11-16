@@ -29,6 +29,7 @@
 
 ![Screenshot](https://github.com/heruhendri/Mikhmon-PPPoE-Ros.6/blob/master/ss.gif)
 
+Instalasi dengan Simple bisa menggunakan script [auto instaler mikhmon](https://github.com/heruhendri/Installer-Mikhmon-VPS)
 
 ## ⚙️ Opsi Instalasi 2
 **multi-instal Mikhmon HTTPS di NAT VPS**
@@ -43,7 +44,7 @@ Pastikan kamu sudah punya:
 
 * VPS NAT (misalnya NATVPS)
 * Akses SSH (dari panel NATVPS)
-* Subdomain (misalnya `mikhmon.hendri.my.id`)
+* Subdomain (misalnya `mikhmon.hendri.site`)
 * Token Cloudflare (opsional, untuk SSL otomatis)
 
 ---
@@ -73,7 +74,7 @@ Masuk ke folder web:
 cd /var/www/
 ```
 
-Clone repo Mikhmon Multi (versi komunitas):
+Clone repo Mikhmon Multi (versi asli):
 
 ```bash
 git clone https://github.com/laksa19/mikhmonv3.git mikhmon
@@ -82,7 +83,7 @@ git clone https://github.com/laksa19/mikhmonv3.git mikhmon
 Atau jika kamu mau versi **multi user modifikasi**, pakai:
 
 ```bash
-git clone https://github.com/fisabiliyusri/MikhmonV3-Multiuser.git mikhmon
+git clone https://github.com/heruhendri/Mikhmon-PPPoE-Ros.6.git mikhmon
 ```
 
 ---
