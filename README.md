@@ -227,7 +227,7 @@ Masuk ke folder web (default di nginx biasanya `/var/www/html/`):
 
 ```bash
 cd /var/www/html/
-wget git clone https://github.com/heruhendri/Mikhmon-PPPoE-Ros.6.git mikhmon -O mikhmon.zip
+wget git clone https://github.com/heruhendri/Mikhmon-PPPoE-Ros.7.git mikhmon -O mikhmon.zip
 unzip mikhmon.zip
 mv mikhmonv3-master mikhmon1
 ```
