@@ -33,7 +33,7 @@
 
 ## ⚙️ Opsi Instalasi 2 (Menggunakan Domain Https Cloudflare)
 **multi-instal Mikhmon HTTPS di NAT VPS**
-Oke Hendri 👍
+By Hendri 👍
 Berikut langkah **lengkap & aman** untuk **install Mikhmon Multi (multi user)** di **NAT VPS** (misalnya dari NATVPS) dan menambahkan **HTTPS (SSL)**.
 
 ---
@@ -43,7 +43,7 @@ Berikut langkah **lengkap & aman** untuk **install Mikhmon Multi (multi user)** 
 Pastikan kamu sudah punya:
 
 * VPS NAT (misalnya NATVPS)
-* Akses SSH (dari panel NATVPS)
+* Akses SSH (dari panel NATVPS Bisa Menggunakan Putty Atau Terminal Yanglain)
 * Subdomain (misalnya `mikhmon.hendri.site`)
 * Token Cloudflare (opsional, untuk SSL otomatis)
 
