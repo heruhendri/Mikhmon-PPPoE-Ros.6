@@ -94,6 +94,8 @@ Buat file konfigurasi baru:
 
 ```bash
 nano /etc/nginx/sites-available/mikhmon1.conf
+nano /etc/nginx/sites-available/mikhmon2.conf
+nano /etc/nginx/sites-available/mikhmon3.conf
 ```
 
 Isi dengan konfigurasi ini (ganti domain kamu):
