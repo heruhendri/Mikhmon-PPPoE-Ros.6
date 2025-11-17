@@ -29,7 +29,7 @@
 
 ![Screenshot](https://github.com/heruhendri/Mikhmon-PPPoE-Ros.6/blob/master/ss.gif)
 
-# 😊Instalasi dengan Simple bisa menggunakan script [auto instaler mikhmon](https://github.com/heruhendri/Installer-Mikhmon-VPS)
+## 😊 Instalasi dengan Simple bisa menggunakan script [auto instaler mikhmon](https://github.com/heruhendri/Installer-Mikhmon-VPS)
 
 ## ⚙️ Opsi Instalasi 2
 **multi-instal Mikhmon HTTPS di NAT VPS**
