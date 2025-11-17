@@ -90,7 +90,7 @@ git clone https://github.com/heruhendri/Mikhmon-PPPoE-Ros.6.git mikhmon
 
 ## 🧰 3. Konfigurasi Nginx
 
-Buat file konfigurasi baru:
+Buat file konfigurasi baru (Buat Format Seperti dibawah dan masukan satu persatu jika anda ingin menginstal mikhmon lebih dari satu): 
 
 ```bash
 nano /etc/nginx/sites-available/mikhmon1.conf
@@ -199,7 +199,7 @@ Pass: 1234
 
 
 
-## ⚙️ Opsi Instalasi 3
+## ⚙️ Opsi Instalasi 3 (Menggunakan IP VPS Dan Port)
  **multi-instal Mikhmon di NAT VPS** (misalnya 2–3 instance sekaligus, beda port).
 
 ---
