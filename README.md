@@ -1,4 +1,4 @@
- **installer otomatis mikhmon-agent + Nginx + PHP + HTTPS (Opsional)** untuk NATVPS Ubuntu (20.04/22.04/24.04).
+ **installer otomatis mikhmon + Nginx + PHP + HTTPS (Opsional)** untuk NATVPS Ubuntu (20.04/22.04/24.04).
 Script ini:
 
 * ✔ Install semua dependensi
@@ -10,7 +10,7 @@ Script ini:
 
 ---
 
-# ✅ **INSTALLER MIKHMON-AGENT NATVPS (NGINX)**
+# ✅ **INSTALLER MIKHMON NATVPS (NGINX)**
 
 ## **Cara pakai:**
 
